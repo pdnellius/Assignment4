@@ -8,10 +8,23 @@
 
 import UIKit
 
-class ArrayViewController: UIViewController {
+//Create data
+var myData = [String]()
+//Reference to prototype cell
+let textCellIdentifier = "TextCell"
 
+class ArrayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    @IBOutlet weak var textFieldEntry: UITextField!
+    @IBAction func tapGesture(sender: AnyObject) {
+        
+    }
+
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldEntry.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
 //        self.dismissViewControllerAnimated(false, completion: nil)
         self.dismissViewControllerAnimated(false, completion: { () -> Void in
             self.view.backgroundColor = UIColor.blueColor()
@@ -23,5 +36,35 @@ class ArrayViewController: UIViewController {
         
         */
     }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myData.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)as! UITableViewCell
+        
+        let row = indexPath.row
+        cell.textLabel?.text = myData[row]
+        return cell
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField.text != "" {
+            myData.append(textField.text)
+        } else {
+            return false
+        }
+        self.tableView.reloadData()
+        textField.text = ""
+        return true
+    }
+    
+
 }
 
