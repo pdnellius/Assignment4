@@ -43,6 +43,10 @@ class ArrayViewController: UIViewController, UITableViewDataSource, UITableViewD
         return myData.count
     }
     
+
+    
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)as! UITableViewCell

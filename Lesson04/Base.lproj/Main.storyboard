@@ -50,7 +50,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QCQ-AC-7b0">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -115,13 +115,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aAg-md-snh">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bbK-C4-oIQ">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -141,7 +141,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter value" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-bZ-jAJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter value" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-bZ-jAJ">
                                 <rect key="frame" x="252" y="285" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -149,12 +149,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RYv-cK-SIg" secondAttribute="centerX" constant="-0.5" id="3zw-bL-Gc2"/>
                             <constraint firstItem="RYv-cK-SIg" firstAttribute="trailing" secondItem="zg4-bZ-jAJ" secondAttribute="trailing" id="CNy-Qy-eU2"/>
+                            <constraint firstItem="zg4-bZ-jAJ" firstAttribute="top" secondItem="RYv-cK-SIg" secondAttribute="bottom" constant="43" id="Dg6-0M-V1S"/>
                             <constraint firstAttribute="centerY" secondItem="zg4-bZ-jAJ" secondAttribute="centerY" id="Gsb-Qe-p7Z"/>
+                            <constraint firstItem="zg4-bZ-jAJ" firstAttribute="top" secondItem="RYv-cK-SIg" secondAttribute="bottom" constant="43" id="Y2z-AY-LAA"/>
                             <constraint firstAttribute="centerX" secondItem="zg4-bZ-jAJ" secondAttribute="centerX" constant="-0.5" id="YPY-GH-dTB"/>
                             <constraint firstItem="RYv-cK-SIg" firstAttribute="leading" secondItem="zg4-bZ-jAJ" secondAttribute="leading" id="d1C-7s-IUs"/>
                             <constraint firstItem="zg4-bZ-jAJ" firstAttribute="top" secondItem="RYv-cK-SIg" secondAttribute="bottom" constant="43" id="dBd-lk-BTO"/>
+                            <constraint firstAttribute="centerX" secondItem="zg4-bZ-jAJ" secondAttribute="centerX" constant="-0.5" id="dcX-Nd-evN"/>
+                            <constraint firstItem="zP7-uP-epS" firstAttribute="top" secondItem="zg4-bZ-jAJ" secondAttribute="bottom" constant="285" id="fTa-9d-LqB"/>
+                            <constraint firstItem="zP7-uP-epS" firstAttribute="top" secondItem="zg4-bZ-jAJ" secondAttribute="bottom" constant="30" id="k4m-Y5-hYB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CNy-Qy-eU2"/>
+                                <exclude reference="d1C-7s-IUs"/>
+                                <exclude reference="Dg6-0M-V1S"/>
+                                <exclude reference="Gsb-Qe-p7Z"/>
+                                <exclude reference="YPY-GH-dTB"/>
+                                <exclude reference="dBd-lk-BTO"/>
+                                <exclude reference="k4m-Y5-hYB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="keyText" destination="RYv-cK-SIg" id="aki-yB-wNE"/>

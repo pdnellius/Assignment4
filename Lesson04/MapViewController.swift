@@ -30,9 +30,7 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
         */
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(animated: Bool) {
         // Returns an instance of NotificationCenter
         // Typically when we call a function that returns a value we set to a variable, but we don't necessarily have to
         NSNotificationCenter.defaultCenter()
@@ -46,18 +44,16 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShowNotification:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHideNotification:", name: UIKeyboardDidHideNotification, object: nil)
-        
     }
     
     func keyboardDidShowNotification(notification: NSNotification) {
         keyText.backgroundColor = UIColor.blueColor()
-        valueText.backgroundColor = UIColor.blueColor()
+    }
+    func keyboardDidHideNotification(notification: NSNotification) {
+        keyText.backgroundColor = UIColor.redColor()
+      
     }
     
-    func keyboardDidHideNotification(notifcation: NSNotification) {
-        keyText.backgroundColor = UIColor.redColor()
-        valueText.backgroundColor = UIColor.redColor()
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -74,11 +70,10 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField === valueText {
-            self.resignFirstResponder()
-            return true
-        } else {
-            return false
+            
         }
+        textField.resignFirstResponder()
+        return true
     }
     
 }
